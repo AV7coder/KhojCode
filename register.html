@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khoj- Register</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body{
+            background: url('assets/tbg2.png') no-repeat center center/cover;
+        }
+
+        /* Footer Container */
+        .footer-container {
+            background: linear-gradient(135deg, #229cff, #003360);
+            color: white;
+            padding: 40px 0;
+            font-family: 'Montserrat', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Footer Content */
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 80%;
+            max-width: 1200px;
+            margin-bottom: 20px;
+        }
+
+        /* Map Section */
+        .footer-map {
+            width: 100%;
+            max-width: 600px;
+            height: 250px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        /* Social Media Section */
+        .footer-social {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .footer-social h3 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #ffffff;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+            font-size: 30px;
+            transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-decoration: none;
+        }
+
+        .social-icon:hover {
+            background-color: #ffffff;
+            color: #003360;
+            transform: scale(1.2);
+        }
+
+        /* Footer Bottom */
+        .footer-bottom {
+            text-align: center;
+            color: #ffffff;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.2);
+            padding: 10px 0;
+        }
+
+        /* Media Query for Smaller Screens */
+        @media (max-width: 768px) {
+            .footer-content {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">KHOJ</div>
+        <nav>
+            <div class="toggle" onclick="toggleMenu()">&#9776;</div>
+            <ul id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="event.html">Events</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="result.html">Results</a></li>
+            </ul>
+        </nav>
+    </header>
+
+<script>
+    window.addEventListener('scroll', function() {
+        const timelineEvents = document.querySelectorAll('.timeline-event');
+        const scrollPosition = window.scrollY + window.innerHeight;
+
+        timelineEvents.forEach(function(event) {
+            const eventTop = event.getBoundingClientRect().top + window.scrollY;
+
+            if (scrollPosition > eventTop) {
+                event.classList.add('glow');
+            } else {
+                event.classList.remove('glow');
+            }
+        });
+    });
+</script>
+
+<br>
+<h1 style="text-align: center; font-size: 5rem;">Register Now</h1>
+
+<style>
+    .countdown-container h1 {
+        color: white;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        margin-bottom: 2rem;
+    }
+    .countdown {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .countdown .title {
+        position: relative;
+        background-color: #ffffff;
+        border-radius: 0.3rem;
+        box-shadow: 0 4px rgba(0, 0, 0, 0.5);
+        margin-bottom: 1.3rem;
+        width: 70px;
+        height: 70px;
+    }
+    .countdown .title::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        height: 1px;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+    .countdown .title h2 {
+        text-align: center;
+        color: rgb(0, 18, 108);
+        font-size: 1.7rem;
+        line-height: 70px;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+    }
+    .countdown .title h2::before, .countdown .title h2::after {
+        content: '';
+        position: absolute;
+        top: 43%;
+        width: 9px;
+        height: 9px;
+        background-color: #0c1821;
+        border-radius: 50%;
+        z-index: 1;
+    }
+    .countdown .title h2::before { left: -5px; }
+    .countdown .title h2::after { right: -5px; }
+    .countdown .count:not(:last-child) {
+        margin-right: 1rem;
+    }
+    .countdown .count p {
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        font-size: 0.7rem;
+        color: rgb(255, 255, 255);
+        font-weight: 500;
+    }
+    @media (min-width: 768px) {
+        .countdown .title {
+            width: 100px;
+            height: 100px;
+        }
+        .countdown .title h2 {
+            line-height: 100px;
+            font-size: 3rem;
+        }
+        .countdown .count:not(:last-child) {
+            margin-right: 1.5rem;
+        }
+    }
+</style>
+
+<div class="countdown-container">
+    <h1 style="text-align: center;">REGISTRATION ENDS IN</h1>
+    <div class="countdown">
+        <!-- day -->
+        <div class="count">
+            <div class="title">
+                <h2 class="day"></h2>
+            </div>
+            <p>days</p>
+        </div>
+        <!-- hour -->
+        <div class="count">
+            <div class="title">
+                <h2 class="hour"></h2>
+            </div>
+            <p>hours</p>
+        </div>
+        <!-- minute -->
+        <div class="count">
+            <div class="title">
+                <h2 class="minute"></h2>
+            </div>
+            <p>minutes</p>
+        </div>
+        <!-- second -->
+        <div class="count">
+            <div class="title">
+                <h2 class="second"></h2>
+            </div>
+            <p>seconds</p>
+        </div>
+    </div>
+</div>
+
+<script>
+const countDown = () => {
+    const launchDate = new Date('11 October, 2024 00:00:00').getTime();
+    const presentDate = new Date().getTime();
+    const difference = launchDate - presentDate;
+    const second = 1000;
+    const minute = 60 * second;
+    const hour = 60 * minute;
+    const day = 24 * hour;
+    const remainDay = Math.floor(difference / day);
+    const remainHour = Math.floor((difference % day) / hour);
+    const remainMinute = Math.floor((difference % hour) / minute);
+    const remainSecond = Math.floor((difference % minute) / second);
+    document.querySelector('.day').innerText = remainDay;
+    document.querySelector('.hour').innerText = remainHour;
+    document.querySelector('.minute').innerText = remainMinute;
+    document.querySelector('.second').innerText = remainSecond;
+};
+setInterval(countDown, 1000);
+</script>
+
+<!-- Tally Form Embed -->
+<div style="display: flex; justify-content: center; margin-top: 50px;">
+    <iframe src="https://tally.so/r/3xyELy" width="50%" height="500" frameborder="0" marginheight="0" marginwidth="0" title="Registration Form"></iframe>
+</div>
+<br><br>
+<!-- Footer -->
+<footer>
+    <div class="footer-container">
+        <div class="footer-content">
+            <!-- Map section -->
+            <div class="footer-map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d1750.8093036266534!2d77.35221704630594!3d28.64119070000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjjCsDM4JzI3LjMiTiA3N8KwMjEnMTIuOSJF!5e0!3m2!1sen!2sin!4v1726402355192!5m2!1sen!2sin"
+                    width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+
+            <!-- Social media section -->
+            <div class="footer-social">
+                <h3>Connect with Us</h3>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/ipsindirapuram/" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/ipsindirapuram/" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="mailto:khojindirapuramps@gmail.com" target="_blank" class="social-icon"><i class="fas fa-envelope"></i></a>
+                    <a href="https://chat.whatsapp.com/KbgRnYJj8CeCfzZjHJSt4w                        " target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                   </div>
+            </div>
+        </div>
+        
+        <!-- Footer bottom -->
+        <div class="footer-bottom">
+            <p>2024 © Khoj 13.0. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

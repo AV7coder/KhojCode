@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khoj</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body{
+            background: url('assets/teambg.png') no-repeat center center/cover;
+
+        }
+        /* Styles for Day 1 and Day 2 columns */
+        .event-container {
+            display: flex;
+            justify-content: space-between;
+            padding: 50px 0;
+            gap: 20px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .event-column {
+            background-color: #f4f4f4;
+            border-radius: 10px;
+            padding: 20px;
+            width: 48%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .event-column h2 {
+            text-align: center;
+            color: #003360;
+            margin-bottom: 20px;
+        }
+
+        .event-column ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .event-column ul li {
+            background: #fff;
+            margin-bottom: 10px;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .event-column ul li span {
+            font-weight: bold;
+            color: #003360;
+        }
+
+        /* Footer Container */
+        .footer-container {
+            /* background: linear-gradient(135deg, #229cff, #003360); */
+            color: white;
+            padding: 40px 0;
+            font-family: 'Montserrat', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Footer Content */
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 80%;
+            max-width: 1200px;
+            margin-bottom: 20px;
+        }
+
+        /* Map Section */
+        .footer-map {
+            width: 100%;
+            max-width: 600px;
+            height: 250px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        /* Social Media Section */
+        .footer-social {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .footer-social h3 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #ffffff;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+            font-size: 30px;
+            transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-decoration: none;
+        }
+
+        .social-icon:hover {
+            background-color: #ffffff;
+            color: #003360;
+            transform: scale(1.2);
+        }
+
+        /* Footer Bottom */
+        .footer-bottom {
+            text-align: center;
+            color: #ffffff;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.2);
+            padding: 10px 0;
+        }
+
+        /* Media Query for Smaller Screens */
+        @media (max-width: 768px) {
+            .event-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .event-column {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .footer-content {
+                width: 90%;
+            }
+        }
+    </style>
+    
+</head>
+<body>
+    <header>
+        <div class="logo">KHOJ</div>
+        <nav>
+            <div class="toggle" onclick="toggleMenu()">&#9776;</div>
+            <ul id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="event.html">Events</a></li>
+                <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfKcpRF9ONQ1gmrTDvIauyp_mMb-wll8eAZv1enPYlVffMiMw/viewform"  target="_blank">Register</a></li>
+                <li><a href="result.html">Results</a></li>
+            </ul>
+        </nav>
+    </header>
+
+<br>
+<h1 style="text-align: center; font-size: 5rem;">Our Events</h1>
+
+  <div class="card-container">
+    <!-- Card 1 -->
+    <div class="card">
+      <div class="card-image">
+        <img src="assets/2.jpg">
+      </div>
+      <div class="hover-content">
+        <p><b>This event gives the participants a chance to showcase their health and fitness achievements. Join us to celebrate physical well-being and inspire others!</p>
+        </b><button class="details-btn" onclick="openPopup()">Event Details</button>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card">
+      <div class="card-image">
+        <img src="assets/3.jpg">
+      </div>
+      <div class="hover-content">
+        <p><b>Showcase your self-composed pieces envisioning Cyber City in 2047 that will blend technology and creativity, reflecting a vibrant future of interconnected experiences.</p>
+        </b><button class="details-btn" onclick="openPopup()">Event Details</button>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card">
+      <div class="card-image">
+        <img src="assets/4.jpg" >
+      </div>
+      <div class="hover-content">
+        <p><b>A powerful dance performance highlighting women's safety will take center stage. This expressive display will raise awareness and inspire change.</p>
+        </b><button class="details-btn" onclick="openPopup()">Event Details</button>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-image">
+        <img src="assets/5.jpg" >
+      </div>
+      <div class="hover-content">
+        <p><b>
+          मौके पर विचारों की एक विचारोत्तेजक लड़ाई होगी। दृष्टिकोणों और अंतर्दृष्टियों के आकर्षक आदान-प्रदान का अनुभव करें!</p>
+        </b><button class="details-btn" onclick="openPopup()">Event Details</button>
+      </div>
+    </div>
+
+  </div>
+  <div class="card-container">
+    <!-- Card 1 -->
+    <div class="card">
+      <div class="card-image">
+        <img src="assets/6.jpg" >
+      </div>
+      <div class="hover-content">
+        <p><b> Groups will showcase their talent in a dynamic dance competition. An exciting display of creativity and movement awaits!</p>
+        </b><button class="details-btn" onclick="openPopup()">Event Details</button>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card">
+      <div class="card-image">
+        <img src="assets/7.jpg">
+
+      </div>
+      <div class="hover-content">
+        <p><b>Participants will express their imagination and creativity through role-play, showcasing their unique cultures’ diversity and artistic expression.
+        </p>
+        </b><button class="details-btn" onclick="openPopup()">Event Details</button>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card">
+      <div class="card-image">
+        <img src="assets/8.jpg" >
+      </div>
+      <div class="hover-content">
+        <p><b>Create a geometric math carnival scene to depict their vision of India in 2047. Use various shapes crafted from provided waste materials to promote creativity and sustainability.</p>
+        </b><button class="details-btn" onclick="openPopup()">Event Details</button>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-image">
+        <img src="assets/9.jpg" >
+      </div>
+      <div class="hover-content">
+        <p><b>Perform patriotic, motivational, and unity songs that celebrate India’s progress and strength. These songs will evoke pride, inspire togetherness, and reflect the nation’s remarkable journey and achievements.</p>
+        </b><button class="details-btn" onclick="openPopup()">Event Details</button>
+      </div>
+    </div>
+
+  </div>
+  <div class="card-container">
+    <!-- Card 1 -->
+    <div class="card">
+      <div class="card-image">
+        <img src="assets/10.jpg">
+      </div>
+      <div class="hover-content">
+        <p><b>Explore the rhythms and nuances of Teentaal, celebrating the intricate beauty of tabla music.</p>
+        </b><button class="details-btn" onclick="openPopup()">Event Details</button>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card">
+      <div class="card-image">
+        <img src="assets/11.jpg" >
+      </div>
+      <div class="hover-content">
+        <p><b>Design infographics with creativity and accuracy to showcase future techno trends.</p>
+        </b><button class="details-btn" onclick="openPopup()">Event Details</button>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card">
+      <div class="card-image">
+        <img src="assets/12.jpg" >
+      </div>
+      <div class="hover-content">
+        <p><b>A quiz on space exploration will test knowledge and spark curiosity about the universe. Dive into fascinating facts and discoveries that shape our understanding of space!
+        </p>
+        </b><button class="details-btn" onclick="openPopup()">Event Details</button>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-image">
+        <img src="assets/13.jpg">
+      </div>
+      <div class="hover-content">
+        <p><b>The Bharat-20 Parliamentary Summit simulates a G20-style event where students debate sustainable development policies for India's future by 2047.
+        </p>
+        </b><button class="details-btn" onclick="openPopup()">Event Details</button>
+      </div>
+    </div>
+
+  </div>
+  <div class="card-container">
+    <!-- Card 1 -->
+    <div class="card">
+      <div class="card-image">
+        <img src="assets/14.png">
+      </div>
+      <div class="hover-content">
+        <p><b>Create graffiti that highlights imagination and creativity through the depiction of Indian art and dance forms.</p>
+        </b><button class="details-btn" onclick="openPopup()">Event Details</button>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card">
+      <div class="card-image">
+        <img src="assets/15.png">
+      </div>
+      <div class="hover-content">
+        <p><b>Hackathon is an exciting event where collaboration and web designing have the ultimate combination leading to joyous learning.</p>
+        </b><button class="details-btn" onclick="openPopup()">Event Details</button>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card">
+      <div class="card-image">
+        <img src="assets/16.jpg">
+      </div>
+      <div class="hover-content">
+        <p><b>Envision the future of radio jockeying in 2047, exploring ingenuity and humor in broadcasting styles.</p>
+        </b><button class="details-btn" onclick="openPopup()">Event Details</button>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-image">
+        <img src="assets/17.png">
+      </div>
+      <div class="hover-content">
+        <p><b>Showcase your best creations from the ATL (Atal Tinkering Lab) for a display of innovation, creativity, and technological brilliance</p>
+        </b><button class="details-btn" onclick="openPopup()">Event Details</button>
+      </div>
+    </div>
+
+  </div>
+  <div class="card-container">
+    <!-- Card 1 -->
+    <div class="card">
+      <div class="card-image">
+        <img src="assets/18.png">
+      </div>
+      <div class="hover-content">
+        <p><b>Experience fun activities and games in a Math Carnival that make math engaging and exciting for everyone.</p>
+        </b><button class="details-btn" onclick="openPopup()">Event Details</button>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card">
+      <div class="card-image">
+        <img src="assets/19.png">
+      </div>
+      <div class="hover-content">
+        <p><b>Create a digital design in a Space Exploration Design Challenge depending on the situation given on the spot.</p>
+        </b><button class="details-btn" onclick="openPopup()">Event Details</button>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card">
+      <div class="card-image">
+        <img src="assets/20.png">
+      </div>
+      <div class="hover-content">
+        <p><b>Create digital cinematic experience that captures the vision of India's future in 2047, blending innovation and creativity.</p>
+        </b><button class="details-btn" onclick="openPopup()">Event Details</button>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-image">
+        <img src="assets/25.png">
+      </div>
+      <div class="hover-content">
+        <p><b>Drama performance to cover stigmas, barriers, nature of intervention, prevention etc. in 2047 to understand psychological health in comparison to the 2020 era.</p>
+        </b><button class="details-btn" onclick="openPopup()">Event Details</button>
+      </div>
+    </div>
+
+  </div>
+  <div class="card-container">
+    <!-- Card 1 -->
+    <div class="card">
+      <div class="card-image">
+        <img src="assets/26.png" >
+      </div>
+      <div class="hover-content">
+        <p><b>Verkleiden Sie sich als berühmte deutsche Persönlichkeit oder tragen Sie ein traditionelles deutsches Kostüm und zeigen Sie, dass Sie fließend Deutsch sprechen.</p>
+        </b><button class="details-btn" onclick="openPopup()">Event Details</button>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card">
+      <div class="card-image">
+        <img src="assets/27.png" >
+      </div>
+      <div class="hover-content">
+        <p><b>Sing the traditional rhyme, following it with a futuristic adaptation, showcasing creativity, innovation, and imagination.
+        </p>
+        </b><button class="details-btn" onclick="openPopup()">Event Details</button>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card">
+      <div class="card-image">
+        <img src="assets/28.png" >
+      </div>
+      <div class="hover-content">
+        <p><b>Portray a literary character from any English drama, focusing on the themes of fear and paranoia in 2047. This performance will examine the psychological challenges and societal anxieties of a future world.
+        </p>
+        </b><button class="details-btn" onclick="openPopup()">Event Details</button>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-image">
+        <img src="assets/29.png" >
+      </div>
+      <div class="hover-content">
+        <p><b>Solve Python Programming Problems efficiently and quickly to advance from the preliminary round to the finals.</p>
+        </b><button class="details-btn" onclick="openPopup()">Event Details</button>
+      </div>
+    </div>
+
+  </div>
+  <div class="card-container">
+    <!-- Card 1 -->
+    <div class="card">
+      <div class="card-image">
+        <img src="assets/30.png" >
+      </div>
+      <div class="hover-content">
+        <p><b>Explore the pressing well-being challenges children may face in 2047, addressing psychological concerns through a standup. </p>
+        </b><button class="details-btn" onclick="openPopup()">Event Details</button>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card">
+      <div class="card-image">
+        <img src="assets/31.png" >
+      </div>
+      <div class="hover-content">
+        <p><b>Display futuristic fashion trends, imagining what India in 2047 might look like.</p>
+        </b><button class="details-btn" onclick="openPopup()">Event Details</button>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card">
+      <div class="card-image">
+        <img src="assets/33.png" >
+      </div>
+      <div class="hover-content">
+        <p><b>Embark on a journey into the future with our Solo Dance competition, where imagination and innovation come alive!
+        </p>
+        </b><button class="details-btn" onclick="openPopup()">Event Details</button>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-image">
+        <img src="assets/32.png" >
+      </div>
+      <div class="hover-content">
+        <p><b>Role-play as characters living in a futuristic India in the year 2047. The performance should depict how technology, culture, and daily life have transformed. 
+
+        </p>
+        </b><button class="details-btn" onclick="openPopup()">Event Details</button>
+      </div>
+    </div>
+
+  </div>
+  <div class="card-container">
+  <div class="card">
+    <div class="card-image">
+      <img src="assets/34.png" >
+    </div>
+    <div class="hover-content">
+      <p><b>भविष्य दर्शन कथा में प्रतिभागी विषय और पात्र के अनुसार वेशभूषा धारण करेंगे। 
+
+      </p>
+      </b><button class="details-btn" onclick="openPopup()">Event Details</button>
+    </div></div>
+  </div>
+  <!-- Popup Modal -->
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <span class="close" onclick="closePopup()">&times;</span>
+      <h2>Event Details</h2>
+      <p id="popup-details">Detailed information about the event goes here.</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+
+<script>
+    function openPopup() {
+  document.getElementById('popup').style.display = 'block';
+}
+
+function closePopup() {
+  document.getElementById('popup').style.display = 'none';
+}
+
+</script>
+<style>
+.card-container {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.card {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  /* background-color: #7ddeff; */
+  border-radius: 20px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hover-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color:#003360;
+  background-color: #b4eaff;
+  padding: 20px;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover .hover-content {
+  display: block;
+  opacity: 1;
+}
+
+.card:hover .card-title {
+  display: none;
+}
+
+.details-btn {
+  background-color: #003360;
+  color: #b4eaff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.details-btn:hover {
+    color: #003360;
+    background-color: #b4eaff;
+border: 2px solid #003360;}
+
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  color: black;
+  padding: 20px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  z-index: 1000;
+}
+
+.popup-content {
+  text-align: center;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+
+@media (max-width: 768px) {
+  nav ul {
+      display: none;
+      flex-direction: column;
+      background-color: #003360;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      padding: 0;
+  }
+
+  nav ul.active {
+      display: flex;
+  }
+
+  nav ul li {
+      padding: 15px 0;
+      border-bottom: 1px solid #ffffff;
+  }
+
+  .toggle {
+      display: block;
+  }
+}</style>
+<script>
+  function toggleMenu() {
+    const navLinks = document.getElementById('nav-links');
+    navLinks.classList.toggle('active');
+}
+    window.addEventListener('scroll', function() {
+        const timelineEvents = document.querySelectorAll('.timeline-event');
+        const scrollPosition = window.scrollY + window.innerHeight;
+
+        timelineEvents.forEach(function(event) {
+            const eventTop = event.getBoundingClientRect().top + window.scrollY;
+
+            if (scrollPosition > eventTop) {
+                event.classList.add('glow');
+            } else {
+                event.classList.remove('glow');
+            }
+        });
+    });
+</script>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <!-- Map section -->
+                <div class="footer-map">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d1750.8093036266534!2d77.35221704630594!3d28.64119070000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjjCsDM4JzI3LjMiTiA3N8KwMjEnMTIuOSJF!5e0!3m2!1sen!2sin!4v1726402355192!5m2!1sen!2sin"
+                        width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+
+                <!-- Social media section -->
+                <div class="footer-social">
+                    <h3>Connect with Us</h3>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/ipsindirapuram/" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/ipsindirapuram/" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="mailto:khojindirapuramps@gmail.com" target="_blank" class="social-icon"><i class="fas fa-envelope"></i></a>
+                        <a href="https://chat.whatsapp.com/KbgRnYJj8CeCfzZjHJSt4w                        " target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                       </div>
+                </div>
+            </div>
+            
+            <!-- Footer bottom -->
+            <div class="footer-bottom">
+                <p>2024 © Khoj 13.0. All rights reserved.</p>
+            </div>
+        </div>
+
+    </footer>
+    <style>
+@media (max-width: 768px) {
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%; /* Ensure cards take most of the screen on mobile */
+        margin-bottom: 20px;
+    }
+}
+.card {
+    transition: all 0.3s ease-in-out;
+}
+
+.hover-content, .card-title {
+    transition: all 0.3s ease-in-out;
+}
+</style>
+</body>
+</html>

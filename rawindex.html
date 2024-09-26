@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khoj</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* Base Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .logo {
+            font-size: 2rem;
+            color: #6ae9ff;
+        }
+
+        nav {
+            display: flex;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+        }
+
+        .toggle {
+            display: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            color: #93ebff;
+            animation: lights 5s 750ms linear infinite;
+        }
+
+        .video-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.8;
+        }
+
+        /* About Section */
+        .about-container {
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .about-image {
+            border-radius: 20%;
+            width: 40%;
+        }
+
+        .history {
+            width: 60%;
+        }
+
+        .quote-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 50px 0;
+            padding: 0 20px;
+        }
+
+        .quote-container {
+            width: 60%;
+            background-color: black;
+            color: white;
+            padding: 20px;
+            border-left: 5px solid rgb(52, 169, 169);
+        }
+
+        .quote-image {
+            width: 40%;
+            border-radius: 20%;
+        }
+
+        /* Media Section */
+        .media-wrapper {
+            text-align: center;
+            width: 45%;
+            margin: 20px;
+        }
+
+        .media-wrapper video,
+        .media-wrapper img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        /* Countdown Section */
+        .countdown-container {
+            text-align: center;
+            padding: 50px;
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .countdown .title {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .countdown h2 {
+            font-size: 2rem;
+            color: black;
+        }
+
+        /* Footer */
+        .footer-container {
+            background-color: black;
+            padding: 40px;
+            color: white;
+            text-align: center;
+        }
+
+        .footer-map {
+            margin-bottom: 20px;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .social-icon:hover {
+            transform: scale(1.1);
+            background-color: white;
+            color: black;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                background-color: rgba(0, 0, 0, 0.9);
+                position: absolute;
+                top: 70px;
+                right: 20px;
+                width: 200px;
+                padding: 10px;
+            }
+
+            .toggle {
+                display: block;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-container, 
+            .quote-section {
+                flex-direction: column;
+            }
+
+            .about-image, 
+            .quote-image {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">KHOJ</div>
+        <nav>
+            <div class="toggle" onclick="toggleMenu()">&#9776;</div>
+            <ul id="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="event.html">Events</a></li>
+                <li><a href="https://docs.google.com/forms/your-link" target="_blank">Register</a></li>
+                <li><a href="result.html">Results</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h1>KHOJ #13.0</h1>
+            <div class="main">
+                <h2 class="motto">Join us to foster innovation</h2>
+            </div>
+        </div>
+        <div class="video-container">
+            <video autoplay muted loop>
+                <source src="assets/Wonderland.mp4" type="video/mp4">
+            </video>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="about-container">
+            <video autoplay muted loop style="width: 50%;">
+                <source src="assets/about.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="history" id="history">
+                <h2>About Khoj</h2>
+                <p class="gradient-text">
+                    As Khoj celebrates its 13th anniversary, it's like looking back on a cherished childhood friend who has grown into a remarkable adult.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="media-section">
+        <div class="inline-container">
+            <div class="media-wrapper">
+                <video autoplay muted loop>
+                    <source src="assets/your-video.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="media-wrapper">
+                <img src="assets/calendar.png" alt="Mark Your Calendars!!">
+            </div>
+        </div>
+    </section>
+<style>
+    /* Card container styling */
+.card-container {
+    display: flex;
+    gap: 20px;
+}
+
+/* Card styling */
+.card {
+    background-color: #003360;
+    border-radius: 8px;
+    padding: 20px;
+    width: 300px;
+    color: white;
+    position: relative;
+}
+
+.card-body {
+    padding: 10px 0;
+}
+
+/* Button styling */
+.read-more-btn {
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* Modal styling */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+}
+
+/* Modal content */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    border-radius: 8px;
+}
+
+/* Close button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+</style>
+<div class="card-container">
+    <!-- Card 1 -->
+    <div class="card">
+        <img src="https://via.placeholder.com/300x200" alt="Card Image 1">
+        <div class="card-body">
+            <div class="card-title" style="color: rgb(255, 255, 255)">Message of Chairman</div>
+            <p class="card-text gradient-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur asperiores sit repellendus quis...</p>
+            <button class="read-more-btn" onclick="openModal('modal1')">Read More</button>
+        </div>
+    </div>
+
+    <!-- Modal 1 -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal1')">&times;</span>
+            <h2>Message of Chairman</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur asperiores sit repellendus quis, voluptatum neque rem nemo. Quae placeat, cumque inventore, nostrum veniam libero rem magni numquam voluptatibus, quo quidem.</p>
+        </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card">
+        <img src="https://via.placeholder.com/300x200" alt="Card Image 2">
+        <div class="card-body">
+            <div class="card-title">Message of Director-Principal</div>
+            <p class="card-text gradient-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora exercitationem ducimus explicabo, mollitia vitae laudantium...</p>
+            <button class="read-more-btn" onclick="openModal('modal2')">Read More</button>
+        </div>
+    </div>
+
+    <!-- Modal 2 -->
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal2')">&times;</span>
+            <h2>Message of Director-Principal</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora exercitationem ducimus explicabo, mollitia vitae laudantium. Similique id quisquam a, accusamus inventore consectetur aliquam quae voluptatibus alias, excepturi necessitatibus ipsam neque.</p>
+        </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card">
+        <img src="https://via.placeholder.com/300x200" alt="Card Image 3">
+        <div class="card-body">
+            <div class="card-title">Message of Vice-Principal</div>
+            <p class="card-text gradient-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia porro temporibus placeat beatae rerum commodi...</p>
+            <button class="read-more-btn" onclick="openModal('modal3')">Read More</button>
+        </div>
+    </div>
+
+    <!-- Modal 3 -->
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal3')">&times;</span>
+            <h2>Message of Vice-Principal</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia porro temporibus placeat beatae rerum commodi vitae ipsum dolorum. Et molestias quod sit sunt reprehenderit fuga saepe fugiat dignissimos praesentium ipsa.</p>
+        </div>
+    </div>
+</div>
+<script>
+
+function openModal(modalId) {
+    document.getElementById(modalId).style.display = "block";
+}
+
+// Function to close the modal
+function closeModal(modalId) {
+    document.getElementById(modalId).style.display = "none";
+}
+
+// Close the modal if the user clicks anywhere outside of the modal
+window.onclick = function(event) {
+    const modals = document.getElementsByClassName("modal");
+    for (let i = 0; i < modals.length; i++) {
+        if (event.target == modals[i]) {
+            modals[i].style.display = "none";
+        }
+    }
+}
+</script>
+
+</script>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-map">
+                <iframe src="https://www.google.com/maps/embed?..." width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            <div class="social-icons">
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('nav-links').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

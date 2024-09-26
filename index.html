@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khoj</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<script src="script.js"></script>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body style="background-color: black; overflow-x: hidden;">
+    <header>
+        <div class="logo">KHOJ</div>
+        <nav>
+            <div class="toggle" onclick="toggleMenu()">&#9776;</div>
+            <ul id="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="event.html">Events</a></li>
+                <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfKcpRF9ONQ1gmrTDvIauyp_mMb-wll8eAZv1enPYlVffMiMw/viewform" target="_blank">Register</a></li>
+                <li><a href="result.html">Results</a></li>
+            </ul>
+        </nav>
+    </header>
+    <style>
+     @keyframes lights {
+        0% {
+          color: hwb(183 56% 0%);
+          text-shadow:
+            0 0 1em hsla(241, 100%, 50%, 0.2),
+            0 0 0.125em hsla(241, 100%, 60%, 0.3),
+            -1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
+            1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
+        }
+        
+        30% { 
+          color: hsl(230, 80%, 90%);
+          text-shadow:
+            0 0 1em hsla(236, 100%, 50%, 0.5),
+            0 0 0.125em hsla(236, 100%, 60%, 0.5),
+            -0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
+            0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
+        }
+        
+        40% { 
+          color: hsl(228, 100%, 78%);
+          text-shadow:
+            0 0 1em hsla(218, 100%, 50%, 0.5),
+            0 0 0.125em hsla(235, 100%, 90%, 0.5),
+            -0.25em -0.125em 0.125em hsla(40, 100%, 60%, 0.2),
+            0.25em 0.125em 0.125em hsla(200, 100%, 60%, 0.4);
+        }
+        
+        70% {
+          color: hsl(230, 100%, 76%);
+          text-shadow:
+            0 0 1em hsla(220, 100%, 50%, 0.5),
+            0 0 0.125em hsla(220, 100%, 60%, 0.5),
+            0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
+            -0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
+        }
+        
+        100% {
+          color: hsl(232, 100%, 81%);
+          text-shadow:
+            0 0 1em hsla(237, 100%, 50%, 0.2),
+            0 0 0.125em hsla(235, 100%, 60%, 0.3),
+            1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
+            -1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
+        }
+        
+      }
+      
+      .heading1 {
+        /* font-size: 3.5rem;
+        font-weight: 300; */
+        animation: lights 5s 750ms linear infinite;
+      }
+    </style>
+    <style>
+        .roller{
+  height: 4.125rem;
+  line-height: 4rem;
+  position: relative;
+  overflow: hidden; 
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+#spare-time{
+  font-size: 1rem;
+  font-style: italic;
+  letter-spacing: 1rem;
+  margin-top: 0;
+  color: #A8DADC;
+  
+}
+
+.roller #rolltext {
+  position: absolute;
+  top: 0;
+  animation: slide 10s infinite;  
+}
+@keyframes slide {
+  0%{
+    top:0;
+  }
+  10%{
+    top: -4rem;    
+  }
+  20%{
+    top: -8rem;
+  }
+  30%{
+    top: -12rem;
+  }
+
+  40%{
+    top: -16rem;
+  }
+  50%{
+    top: -20rem;}
+    60%{
+    top: -24rem;
+  }
+  70%{
+    top: -28rem;
+  }
+  80%{
+    top: -32rem;
+  }
+  90%{
+    top: -36rem;
+  }
+
+  100%{
+    top: -40rem;
+  }
+}
+
+@media screen and (max-width: 600px){
+
+  .roller{
+    font-size: 4rem;
+  height: 2.6rem; 
+  line-height: 2.125rem;  
+  }
+  
+  #spare-time {
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+  }
+  
+  .roller #rolltext { 
+    
+  animation: slide-mob 10s infinite;  
+}
+  
+@keyframes slide {
+  0%{
+    top:0;
+  }
+  10%{
+    top: -4rem;    
+  }
+  20%{
+    top: -8rem;
+  }
+  30%{
+    top: -12rem;
+  }
+
+  40%{
+    top: -16rem;
+  }
+  50%{
+    top: -20rem;}
+    60%{
+    top: -24rem;
+  }
+  70%{
+    top: -28rem;
+  }
+  80%{
+    top: -32rem;
+  }
+  90%{
+    top: -36rem;
+  }
+
+  100%{
+    top: -40rem;
+  }
+}}
+</style>
+
+    <section class="hero">
+
+        <div class="hero-text">
+            <h1 style="color: rgb(147, 235, 255); font-size: 5rem;" class="heading1">KHOJ #13.0</h1>
+            <!-- <h2 style="color: rgb(0, 208, 255); font-size: 3rem;">India in 2047: Envisioning the Dawn</h2> -->
+            <div class="main">
+                <h1 class="motto" style="font-size: 5rem;">Join us to foster
+                <div class="roller">
+                  <span id="rolltext" style="color:#6ae9ff;">
+                    <br>Kontent
+                    <br>Kollaboration
+                    <br>Kandid 
+                    <br>Kuriosity
+                    <br>Knowledge
+                    <br>Krystal
+                    <br>Kapable
+                    <br>Kan-do 
+                    <br>Kreative
+                    <br>Klassic 
+                    <br>Konfident
+
+                  <span id="spare-time">Only in Khoj #13.0, IPS</span><br/>
+                </div>
+                  </h1>   
+            </div>
+        </div>
+        <div class="video-container">
+        <video autoplay muted loop class="">
+            <source src="assets/Wonderland.mp4" type="video/mp4">
+          </video>
+        <style>
+            .video-container {
+                opacity: 0.8;
+                position: absolute;
+                top: 0;
+                left: 0;
+                min-width: 100%;
+                min-height: 100%;
+                z-index:-100;
+    }
+        </style></div>
+    </section>
+   
+    <style>
+        @media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        background-color: rgba(0, 0, 0, 0.9);
+        width: 200px;
+        padding: 10px;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    .toggle {
+        display: block;
+    }
+}
+            .video-container video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform: translate(-50%, -50%);
+        opacity: 0.8;
+    }
+                @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                background-color: rgba(0, 0, 0, 0.9);
+                position: absolute;
+                top: 70px;
+                right: 20px;
+                width: 200px;
+                padding: 10px;
+            }}
+        .about-container {
+            background-color: #282424            ;
+            justify-content: center;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            /* margin-right: 80px; */
+        }
+
+        .about-image {
+            border-radius: 20%;
+            width: 40%;
+            /* margin-right: 20px; */
+        }
+
+        .history {
+            width: 60%;
+        }
+
+        .quote-section {
+            padding-right: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 50px 0;
+        }
+
+        .quote-container {
+            width: 60%;
+        }
+
+        .quote-image {
+            border-radius: 20%;
+            width: 40%;
+            /* margin-left: 20px; */
+        }
+        .quote-container {
+            justify-content: center;
+            text-align: center;
+            max-width: 800px;
+            /* padding: 10px; */
+            border-left: 5px solid rgb(52, 169, 169);
+            background-color: #000000;
+            font-family: 'Georgia', serif;
+            /* color: #877cfc; */
+        }
+        .gradient-text {
+            font-weight: bold;
+            background: linear-gradient(45deg, #F8E8E4, #b899ff      ); /* Gradient colors */
+            -webkit-background-clip: text; /* For WebKit browsers */
+            -webkit-text-fill-color: transparent; /* For WebKit browsers */
+            background-clip: text; /* For non-WebKit browsers */
+        }
+        .quote {
+            text-align: center;
+            font-size: 2rem;
+            margin: 0;
+            padding-left: 15px;
+            font-family: monospace;
+        }
+
+        .author {
+            display: block;
+            margin-top: 15px;
+            font-size: 1rem;
+            font-weight: bold;
+            text-align: right;
+            color: #b899ff     ;
+        }
+
+        @media (max-width: 768px) {
+            .about-container, .quote-section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .about-image, .quote-image {
+
+                width: 100%;
+                /* margin: 20px 0; */
+            }
+
+            .history, .quote-container {
+                width: 100%;
+            }
+        }
+    </style>
+<section class="about">
+<style>
+    .about{
+        background-image: url('assets/tbg2.png');
+    }
+</style>
+    <div class="about-container";>
+        <video autoplay muted loop style="width: 50%; border: 0;">
+            <source src="assets/about2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="history" id="history">
+            <h2 style="color: rgb(52, 169, 169);font-family: Poppins; font-weight: 600;">About Khoj</h2>
+            <p style="text-align: center; font-size:x-large;" class="gradient-text" ><b>As Khoj celebrates its 13th anniversary, it's like looking back on a cherished childhood friend who has grown into a remarkable adult. Over the years, this interschool competition has nurtured young minds, sparking creativity and critical thinking.<br> This year, Khoj invites us on a journey into the future. Imagine India in 2047, 100 years after gaining independence. What will our nation look like? How will we have changed? This theme encourages students to dream big, to envision a future where technology, society, and governance have evolved. </p>
+       </b> </div>
+        
+    </div> 
+</section>
+
+<style>
+    .countdown-container h1 {
+        color: white;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        margin-bottom: 2rem;
+    }
+    .countdown {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .countdown .title {
+        position: relative;
+        background-color: #ffffff;
+        border-radius: 0.3rem;
+        box-shadow: 0 4px rgba(0, 0, 0, 0.5);
+        margin-bottom: 1.3rem;
+        width: 70px;
+        height: 70px;
+    }
+    .countdown .title::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        height: 1px;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+    .countdown .title h2 {
+        text-align: center;
+        color: rgb(0, 18, 108);
+        font-size: 1.7rem;
+        line-height: 70px;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+    }
+    .countdown .title h2::before, .countdown .title h2::after {
+        content: '';
+        position: absolute;
+        top: 43%;
+        width: 9px;
+        height: 9px;
+        background-color: #0c1821;
+        border-radius: 50%;
+        z-index: 1;
+    }
+    .countdown .title h2::before { left: -5px; }
+    .countdown .title h2::after { right: -5px; }
+    .countdown .count:not(:last-child) {
+        margin-right: 1rem;
+    }
+    .countdown .count p {
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        font-size: 0.7rem;
+        color: rgb(255, 255, 255);
+        font-weight: 500;
+    }
+    @media (min-width: 768px) {
+        .countdown .title {
+            width: 100px;
+            height: 100px;
+        }
+        .countdown .title h2 {
+            line-height: 100px;
+            font-size: 3rem;
+        }
+        .countdown .count:not(:last-child) {
+            margin-right: 1.5rem;
+        }
+    }
+</style>
+
+<div class="countdown-container">
+    <h1 style="text-align: center;">REGISTRATION ENDS IN</h1>
+    <div class="countdown">
+        <!-- day -->
+        <div class="count">
+            <div class="title">
+                <h2 class="day"></h2>
+            </div>
+            <p>days</p>
+        </div>
+        <!-- hour -->
+        <div class="count">
+            <div class="title">
+                <h2 class="hour"></h2>
+            </div>
+            <p>hours</p>
+        </div>
+        <!-- minute -->
+        <div class="count">
+            <div class="title">
+                <h2 class="minute"></h2>
+            </div>
+            <p>minutes</p>
+        </div>
+        <!-- second -->
+        <div class="count">
+            <div class="title">
+                <h2 class="second"></h2>
+            </div>
+            <p>seconds</p>
+        </div>
+    </div>
+</div>
+
+<script>
+const countDown = () => {
+    const launchDate = new Date('15 October, 2024 09:00:00').getTime();
+    const presentDate = new Date().getTime();
+    const difference = launchDate - presentDate;
+    const second = 1000;
+    const minute = 60 * second;
+    const hour = 60 * minute;
+    const day = 24 * hour;
+    const remainDay = Math.floor(difference / day);
+    const remainHour = Math.floor((difference % day) / hour);
+    const remainMinute = Math.floor((difference % hour) / minute);
+    const remainSecond = Math.floor((difference % minute) / second);
+    document.querySelector('.day').innerText = remainDay;
+    document.querySelector('.hour').innerText = remainHour;
+    document.querySelector('.minute').innerText = remainMinute;
+    document.querySelector('.second').innerText = remainSecond;
+};
+setInterval(countDown, 1000);
+</script>
+<style>
+        .inline-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            margin: 50px 0;
+        }
+
+        .media-wrapper {
+            text-align: center;
+            width: 45%;
+            margin: 0 20px;
+        }
+
+        .media-wrapper video,
+        .media-wrapper img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .media-wrapper .above-text {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .inline-container {
+                flex-direction: column;
+            }
+
+            .media-wrapper {
+                width: 100%;
+                margin: 20px 0;
+            }
+        }
+        .above-text{
+            font-size: 2rem;
+        }
+</style>
+<section class="media-section">
+    <div class="inline-container">
+        <!-- Video with Text Above -->
+        <div class="media-wrapper">
+            <div class="above-text" style="color: rgb(52, 169, 169);font-family: Poppins; font-weight: 600;">Why Khoj?</div>
+            <video autoplay muted loop>
+                <source src="your-video-file.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <!-- Image with Text Above -->
+        <div class="media-wrapper">
+            <div class="above-text" style="color: rgb(52, 169, 169);font-family: Poppins; font-weight: 600;">Mark Your Calendars!!</div>
+            <img src="assets/calendar.png" alt="Sample Image" style="width: 80%;">
+        </div>
+    </div>
+</section>
+<section>
+    <script>
+        const toggleMenu = document.querySelector('.toggle');
+        const navLinks = document.querySelector('nav ul');
+    
+        toggleMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
+        });
+    </script>
+    
+    <div class="quote-section">
+        <div class="quote-container">
+            <blockquote class="quote">
+                <p class="gradient-text">"The future isn’t merely a destination waiting for us; it’s something we build through our actions and ideas today. With Khoj #13.0, we're not just stepping into the unknown—we're crafting it, shaping what lies ahead with every choice we make."
+           </p> </blockquote>
+            <cite class="author">- Team Khoj #13.0</cite>
+        </div>
+
+        <!-- Image aligned with quote -->
+        <img src="assets/images.jpg" alt="Future Vision Image" class="quote-image" style="width: 500px;">
+    </div>
+      
+</section>
+    <style>
+        /* Footer Container */
+        .footer-container {
+            /* background: linear-gradient(135 deg, #229cff, #003360); */
+            color: white;
+            padding: 40px 0;
+            font-family: 'Montserrat', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Footer Content */
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 80%;
+            max-width: 1200px;
+            margin-bottom: 20px;
+        }
+
+        /* Map Section */
+        .footer-map {
+            width: 100%;
+            max-width: 600px;
+            height: 250px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        /* Social Media Section */
+        .footer-social {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .footer-social h3 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #ffffff;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+            font-size: 30px;
+            transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-decoration: none;
+        }
+
+        .social-icon:hover {
+            background-color: #ffffff;
+            color: #003360;
+            transform: scale(1.2);
+        }
+
+        /* Footer Bottom */
+        .footer-bottom {
+            text-align: center;
+            color: #ffffff;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.2);
+            padding: 10px 0;
+        }
+
+        /* Media Query for Smaller Screens */
+        @media (max-width: 768px) {
+            .footer-content {
+                width: 90%;
+            }
+        }
+    </style>
+    <script src="script.js"></script>
+    <style>
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .card {
+            background-color: rgb(27, 27, 55);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            width: 300px;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 15px;
+        }
+
+        .card-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .card-text {
+            /* color: #98fcff; */
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .card-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .card {
+                width: 90%;
+            }
+        }
+        /* Modal styling */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+}
+
+/* Modal content */
+.modal-content {
+    color: #08033e;
+    background-color: #b8fff1;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    border-radius: 8px;
+}
+
+/* Close button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+/* Button styling */
+.read-more-btn {
+    background-color: #f539ff; /* Green background */
+    color: rgb(241, 241, 241); /* White text */
+    padding: 10px 20px; /* Padding for the button */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Adjust font size */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Button hover effect */
+.read-more-btn:hover {
+    background-color: #45a049; /* Slightly darker green on hover */
+}
+
+/* Button focus effect */
+.read-more-btn:focus {
+    outline: none; /* Remove focus outline */
+}
+
+    </style>
+    <script>
+
+// Function to open the modal
+function openModal(modalId) {
+    document.getElementById(modalId).style.display = "block";
+}
+
+// Function to close the modal
+function closeModal(modalId) {
+    document.getElementById(modalId).style.display = "none";
+}
+
+// Close the modal if the user clicks anywhere outside of the modal
+window.onclick = function(event) {
+    const modals = document.getElementsByClassName("modal");
+    for (let i = 0; i < modals.length; i++) {
+        if (event.target == modals[i]) {
+            modals[i].style.display = "none";
+        }
+    }
+}
+</script>
+
+    <div class="card-container">
+        <!-- Card 1 -->
+        <div class="card">
+            <img src="https://via.placeholder.com/300x200" alt="Card Image 1">
+            <div class="card-body">
+                <div class="card-title" style="color: rgb(255, 255, 255)">Message of Chairman</div>
+                <p class="card-text gradient-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur asperiores sit repellendus quis...</p>
+                <button class="read-more-btn" onclick="openModal('modal1')">Read More</button>
+            </div>
+        </div>
+    
+        <!-- Modal 1 -->
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('modal1')">&times;</span>
+                <h2>Message of Chairman</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit minus dicta, tempore debitis labore, culpa quidem sint omnis exercitationem itaque laudantium molestias quaerat totam. Pariatur ducimus quis quasi ut inventore!</p>
+            </div>
+        </div>
+    
+        <!-- Card 2 -->
+        <div class="card">
+            <img src="https://via.placeholder.com/300x200" alt="Card Image 2">
+            <div class="card-body">
+                <div class="card-title">Message of Director-Principal</div>
+                <p class="card-text gradient-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora exercitationem ducimus explicabo, mollitia vitae laudantium...</p>
+                <button class="read-more-btn" onclick="openModal('modal2')">Read More</button>
+            </div>
+        </div>
+    
+        <!-- Modal 2 -->
+        <div id="modal2" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('modal2')">&times;</span>
+                <h2>Message of Director-Principal</h2>
+                <p>“How wonderful it is that nobody need wait a single moment before starting to improve the world.” – Anne Frank.<br>
+
+                    This quote emphasises the fact that Now is the time to dare, dream, innovate, and articulate our vision for our nation as we approach the centenary of our independence. Every idea and creativity are essential in tackling the challenges we face today and transforming them into opportunities for tomorrow. 
+                    
+                    I believe that while knowing the future is indeed captivating, writing our own narrative is even more exhilarating! Khoj 13.0 is all set to be an inspiration and be inspired from diverse strengths, incredible talents and creative insights to build a more inclusive and prosperous society. 
+                    
+                    Together, let’s explore the possibilities that lie ahead and work towards making our shared vision a reality where India thrives in unity, technology and sustainability. 
+                    
+                    I am excited to witness the passion and ingenuity you will bring to this event. Let us embark on this journey of discovery and commitment to a brighter India!<br><br>
+                    Ms. Rita Singh<br>
+Director-Principal - Indirapuram Public School, Indirapuram
+                </p>
+            </div>
+        </div>
+    
+        <!-- Card 3 -->
+        <div class="card">
+            <img src="https://via.placeholder.com/300x200" alt="Card Image 3">
+            <div class="card-body">
+                <div class="card-title">Message of Vice-Principal</div>
+                <p class="card-text gradient-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia porro temporibus placeat beatae rerum commodi...</p>
+                <button class="read-more-btn" onclick="openModal('modal3')">Read More</button>
+            </div>
+        </div>
+    
+        <!-- Modal 3 -->
+        <div id="modal3" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('modal3')">&times;</span>
+                <h2>Message of Vice-Principal</h2>
+                <p>Dear Principals,<br>
+
+
+                    "The ambition coupled with the determination of leaving no one behind is the beacon that illuminates the dawning of tomorrow."
+                    
+                    
+                    Warm greetings from Indirapuram Public School, Indirapuram!
+                    
+                    
+                    We are thrilled to announce the 12th edition of KHOJ 2024: Search for Hidden Talents. This dynamic platform empowers young minds to unleash their creativity, foster collaborations, and transform visionary ideas into reality.
+                    
+                    
+                    This year's theme, "India 2047: Envisioning the Dawn," invites students to dream big and articulate their vision for an inclusive and sustainable future. Through an innovative palette of expressions - words, art, technology, and performance - we aim to equip them with tools to tackle today's issues and craft a brighter tomorrow.
+                    
+                    
+                    As we embark on this journey, we believe that "the future isn’t a goal we arrive at; it’s something we craft together."
+                    
+                    
+                    We cordially invite your school to participate in this enlightening experience, fostering critical thinking & collaboration and responsible behavior among your students.
+                    
+                    We look forward to your school's enthusiastic participation.
+                    <br>
+                    <br>
+                    Warm regards,
+                    <br>
+                    
+                    Dr Ashish Mittal<br>
+                    Convener - KHOJ 2024<br>
+                    Vice Principal - Indirapuram Public School, Indirapuram</p>
+            </div>
+        </div>
+    </div>
+<style>
+    
+</style>    
+    <section class="faq-section">
+        <h2 style="color: rgb(52, 169, 169);font-family: Poppins; font-weight: 600;">Frequently Asked Questions</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <button class="faq-question">What is Khoj #13.0?</button>
+                <div class="faq-answer">
+                    <p>KHOJ is a commemorative event of talents, creativity and dedication of the young minds of the
+                        student community. It offers students from various schools a unique platform for the exchange of
+                        ideas and the cultivation of skills.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Who can participate in Khoj?</button>
+                <div class="faq-answer">
+                    <p>KHOJ invites participation from students across schools, offering a platform for innovators, thinkers, and creators to showcase their talents and ideas. This event is open to all students from Pre-Primary to Class XII.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">What is the theme for Khoj #13.0?</button>
+                <div class="faq-answer">
+                    <p>The theme for Khoj #13.0 is "Envisioning India 2047," encouraging students to dream big and explore the future of technology, society, and governance.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">How can I register for Khoj?</button>
+                <div class="faq-answer">
+                    <p>Participants can register for Khoj by visiting the official Khoj website and filling out the registration form. Make sure to follow the guidelines provided.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+<style>
+    /* FAQ Section */
+.faq-section {
+    text-align: center;
+}
+
+.faq-section h2 {
+    font-size: 2.2rem;
+    color: #72b9ff;
+    margin-bottom: 30px;
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    margin-bottom: 10px;
+    border: 1px solid #0080ff00;
+    border-radius: 0.25rem;
+    background-color: #726ac800;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.faq-question {
+    width: 100%;
+    background-color: #1500ff00;
+    color: #ffffff;
+    font-size: 1.25rem;
+    padding: 10px 15px;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    outline: none;
+    transition: background-color 0.3s ease;
+}
+
+.faq-question:hover {
+    color: #08033e;
+    background-color: #ffffff;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 15px;
+    background-color: #08033e00;
+    color: #ffffff;    transition: max-height 0.3s ease, padding 0.3s ease;
+    font-size: 1rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border-top: 1px solid #bfdeff;
+}
+
+.faq-answer p {
+    margin: 15px 0;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 200px; /* Adjust to fit the content */
+    padding: 15px;
+}
+
+/* Animation */
+.faq-item.active .faq-question {
+    background-color: #08033e00;
+    color: #ffffff;}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .faq-section h2 {
+        font-size: 2rem;
+    }
+
+    .faq-question {
+        font-size: 1rem;
+        padding: 12px 16px;
+    }
+
+    .faq-answer p {
+        font-size: 0.9rem;
+    }
+}
+@media screen and (max-width: 600px){
+
+  
+  @keyframes slide-mob {
+  0%{
+    top:0;
+  }
+  10%{
+    top: -2.5em;    
+  }
+  20%{
+    top: -5rem;
+  }
+  30%{
+    top: -7.5rem;
+  }
+
+  40%{
+    top: -10rem;
+  }
+  50%{
+    top: -12.5rem;}
+    60%{
+    top: -15rem;
+  }
+  70%{
+    top: -17.5rem;
+  }
+  80%{
+    top: -20rem;
+  }
+  90%{
+    top: -22.5rem;
+  }
+
+  100%{
+    top: -25rem;
+  }
+}
+}
+</style>    
+<script>
+    const faqItems = document.querySelectorAll('.faq-item');
+
+faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    
+    question.addEventListener('click', () => {
+        // Toggle active class on the clicked item
+        item.classList.toggle('active');
+
+        // Collapse other items
+        faqItems.forEach(otherItem => {
+            if (otherItem !== item) {
+                otherItem.classList.remove('active');
+            }
+        });
+    });
+});
+
+</script>
+<br>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <!-- Map section -->
+                <div class="footer-map">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d1750.8093036266534!2d77.35221704630594!3d28.64119070000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjjCsDM4JzI3LjMiTiA3N8KwMjEnMTIuOSJF!5e0!3m2!1sen!2sin!4v1726402355192!5m2!1sen!2sin"
+                        width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+
+                <!-- Social media section -->
+                <div class="footer-social">
+                    <h3>Connect with Us</h3>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/ipsindirapuram/" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/ipsindirapuram/" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="mailto:khojindirapuramps@gmail.com" target="_blank" class="social-icon"><i class="fas fa-envelope"></i></a>
+                        <a href="https://chat.whatsapp.com/KbgRnYJj8CeCfzZjHJSt4w                        " target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                        <!-- group link -->
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Footer bottom -->
+            <div class="footer-bottom">
+                <p >2024 © Khoj 13.0. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
